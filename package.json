@@ -1,0 +1,17 @@
+{
+  "name": "proyectointegrador",
+  "version": "1.0.0",
+  "description": "Proyecto integrador INGSOFT-IHM-ML",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Diego Bahamonde, Kevin Changoluisa, Bryan Imbaquingo Christian Lasso",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "hbs": "^4.1.1",
+    "nodemon": "^2.0.4",
+    "open": "^7.0.4"
+  }
+}
