@@ -3,6 +3,8 @@ const app = express()
 
 const hbs = require('hbs')
 
+const puerto = process.env.PORT || 3000
+
 app.use(express.static(__dirname + '/public'))
 
 hbs.registerPartials(__dirname + '/views/partials')
@@ -42,6 +44,6 @@ app.get('/services', (req, res) => {
 })
 
 
-app.listen(3000, () => {
-    console.log('escuchando el puerto 3000');
+app.listen(puerto, () => {
+    console.log('escuchando el puerto ', puerto);
 })
