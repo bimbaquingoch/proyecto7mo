@@ -11,12 +11,16 @@ hbs.registerPartials(__dirname + '/views/partials')
 
 app.set('view engine', 'hbs')
 
-app.get('/home', (req, res) => {
+app.get('/', (req, res) => {
     res.render('home', {
         names: "Bahamonde,Changoluisa,Imbaquingo,Lasso",
         year: new Date().getFullYear(),
         page: 'Home'
     })
+})
+
+app.get('/home', (req, res) => {
+    res.render('home')
 })
 
 app.get('/about', (req, res) => {
