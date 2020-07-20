@@ -19,7 +19,7 @@ npm install
 
 3.- Correr el servidor: introducir el comando
 
-node server.js
+node server\server.js
 
 una vez esté corriendo el servidor ir a
 
