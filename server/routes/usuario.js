@@ -1,10 +1,14 @@
 const express = require('express')
+//para encriptar la contraseña
+const bcrypt = require('bcrypt')
+//
+const _ = require('underscore')
+//importacion del esquema de usuario
+const Usuario = require('../models/usuario')
+
 // app es el objeto con el que manejamos express
 // osea es el constructor del módulo
 const app = express()
-
-//importacion del esquema de usuario
-const Usuario = require('../models/usuario')
 
 app.post('/register', (req, res) => {
 
@@ -13,7 +17,7 @@ app.post('/register', (req, res) => {
         nombre: body.nombre,
         apellido: body.apellido,
         email: body.email,
-        password: body.password,
+        password: bcrypt.hashSync(body.password,10),
         role: body.role
     })
 
@@ -32,6 +36,47 @@ app.post('/register', (req, res) => {
 
     })
 
+})
+
+app.put('/register/:id',(req,res)=>{
+
+    let id = req.params.id
+    let body = _.pick(req.body)
+
+    Usuario.findByIdAndUpdate(id,body,{
+        new:true,
+        runValidators:true,
+        context:'query'
+    },(err,usuarioDB)=>{
+        if (err) {
+            return res.status(400).json({
+                ok:false,
+                err
+            })
+        }
+
+        res.json({
+            ok:true,
+            usuario: usuarioDB
+        })
+    })
+
+})
+
+app.get('/',(req,res)=>{
+    Usuario.find({}).exec((err,usuarios)=>{
+        if (err) {
+            return res.status(400).json({
+                ok:false,
+                err
+            })
+        }
+
+        res.json({
+            ok:true,
+            usuario: usuarioDB
+        })
+    })
 })
 
 // el llamado de las interfaces (archivos hbs que son los html) desde el objeto app

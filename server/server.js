@@ -37,7 +37,9 @@ app.use(require('./routes/usuario'))
 //conexion BDD
 mongoose.connect('mongodb://localhost:27017/proyecto', {
     useNewUrlParser: true, 
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
+    useCreateIndex:true,
+    useFindAndModify:false
 },(err,res)=>{
     if (err)throw err
     console.log("Base de datos online");
