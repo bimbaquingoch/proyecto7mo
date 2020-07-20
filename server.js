@@ -65,6 +65,15 @@ app.get('/login', (req, res) => {
     res.render('login', { page: 'Login' })
 })
 
+//interfaz doctor
+app.get('/logindoc', (req, res) => {
+    res.render('logindoc', { page: 'logindoc' })
+})
+
+app.get('/pacientes', (req, res) => {
+    res.render('pacientes', { page: 'Pacientes' })
+})
+
 // finalización de llamado de las interfaces
 
 //aquí está el llamado para la ejecución del puerto 
