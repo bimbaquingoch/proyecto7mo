@@ -11,8 +11,10 @@
   "author": "Diego Bahamonde, Kevin Changoluisa, Bryan Imbaquingo Christian Lasso",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "hbs": "^4.1.1",
+    "mongoose": "^5.9.25",
     "nodemon": "^2.0.4",
     "open": "^7.0.4"
   },

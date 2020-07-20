@@ -1,30 +1,40 @@
-//express es un middleword osea, una capa intermedia entre 2 interfaces
-//de software, realiza la getion del html a trevés del servidor web
-
 const express = require('express')
-    // app es el objeto con el que manejamos express
-    // osea es el constructor del módulo
+// app es el objeto con el que manejamos express
+// osea es el constructor del módulo
 const app = express()
 
-// handlebars (hbs) es un motor de plantillas
-// hbs permite que se pueda dividir el código html y reutilizar código html que se repite
+//importacion del esquema de usuario
+const Usuario = require('../models/usuario')
 
-const hbs = require('hbs')
+app.post('/register', (req, res) => {
 
-//se llama al puerto, por defecto el puerto 3000 de manera local y cuando está en heroku busca un puerto disponible
+    let body = req.body
+    let usuario = new Usuario({
+        nombre: body.nombre,
+        apellido: body.apellido,
+        email: body.email,
+        password: body.password,
+        role: body.role
+    })
 
-const puerto = process.env.PORT || 3000
+    usuario.save((err,usuarioDB)=>{
+        if (err) {
+            return res.status(400).json({
+                ok:false,
+                err
+            })
+        }
 
-app.use(express.static(__dirname + '/public'))
+        res.json({
+            ok: true,
+            usuario:usuarioDB
+        })
 
-//llamado a la carpeta que contiene los archivos hbs
+    })
 
-hbs.registerPartials(__dirname + '/views/partials')
-
-app.set('view engine', 'hbs')
+})
 
 // el llamado de las interfaces (archivos hbs que son los html) desde el objeto app
-
 app.get('/', (req, res) => {
     res.render('home')
 })
@@ -76,8 +86,5 @@ app.get('/pacientes', (req, res) => {
 
 // finalización de llamado de las interfaces
 
-//aquí está el llamado para la ejecución del puerto 
-
-app.listen(puerto, () => {
-    console.log('escuchando el puerto ', puerto);
-})
+//se exporta las interfaces de usuario
+module.exports = app

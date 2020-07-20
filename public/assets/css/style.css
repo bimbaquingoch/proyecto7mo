@@ -486,13 +486,14 @@ input[type=text]:placeholder {
     text-transform: uppercase;
 }
 
+#header .logo a:link, a:visited, a:active {
+    text-decoration:none;
+}
+
 #header .logo a {
     color: #555555;
 }
 
-#header .logo img {
-    max-height: 40px;
-}
 
 @media (max-width: 992px) {
     #header {
@@ -536,6 +537,10 @@ input[type=text]:placeholder {
     font-family: "Roboto", sans-serif;
     text-transform: uppercase;
     font-weight: 500;
+}
+
+.nav-menu a:link, a:visited, a:active {
+    text-decoration:none;
 }
 
 .nav-menu a:hover,
