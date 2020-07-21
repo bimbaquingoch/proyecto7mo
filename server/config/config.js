@@ -5,13 +5,13 @@ process.env.PORT = process.env.PORT || 3000;
 process.env.NODE_ENV = process.env.NODE_ENV || 'dev'
 
 //conexion a la base de datos
-
+/*
 let urlDB = "";
 if (process.env.NODE_ENV === 'dev') {
     urlDB = "mongodb://localhost:27017/proyecto";
-} else {
-    urlDB = "urlatlas"
-};
+} else {*/
+    urlDB = "mongodb+srv://user_db:1a2b3c4d5s@proyectointegrador.ctgyz.mongodb.net/proyectoIntegrador?retryWrites=true&w=majority"
+//};
 process.env.URLDB = urlDB;
 
 //caducidad del token
