@@ -5,7 +5,7 @@ let uniqueValidator = require('mongoose-unique-validator')
 let Schema = mongoose.Schema
 
 let rolesValidos ={
-    values:['MEDICO_ROLE','PACIENTE'],
+    values:['MEDICO','PACIENTE'],
     message:'{VALUE} no es un rol válido'
 }
 
