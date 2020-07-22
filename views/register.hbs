@@ -1,18 +1,36 @@
 {{> header }}
 {{> navbar }}
 
-<section id="appointment" class="appointment section-bg">
-      <div class="container" data-aos="fade-up">
+    <div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
 
-        <div class="section-title">
-          <h2>Registro</h2>
-        </div>
+    <!-- Icon -->
+    <div class="fadeIn first">
+        <br>
+      <h1>Registro</a></h1>
+      <br>
+    </div>
 
-        <form action="forms/appointment.php" method="post" role="form" class="php-email-form" data-aos="fade-up" data-aos-delay="100">
-          
+    <!-- Login Form -->
+    <form>
+          <input type="text" id="nombre" name="nombre" class="fadeIn second" placeholder="Nombre">
+          <input type="text" id="apellido" name="apellido" class="fadeIn second" placeholder="Apellido">
+          <input type="email" id="email" name="email" class="fadeIn second" placeholder="correo">
+          <input type="password"  pattern=".{8,}" id="password" name="password" class="fadeIn second" placeholder="Contraseña">
+          <input type="submit" value="Submit" class="fadeIn second">
         </form>
 
-      </div>
-    </section>
+    <!-- Remind Passowrd --
+    <div id="formFooter">
+      <a class="underlineHover" href="#">Forgot Password?</a>
+    </div>
+    -->
+  </div>
+</div>
+
+
+
+
 
 {{> footer }}

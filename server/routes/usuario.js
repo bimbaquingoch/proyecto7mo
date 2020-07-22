@@ -37,7 +37,7 @@ app.post('/register', (req, res) => {
     })
 
 })
-
+/*
 app.put('/register/:id',(req,res)=>{
 
     let id = req.params.id
@@ -62,7 +62,8 @@ app.put('/register/:id',(req,res)=>{
     })
 
 })
-
+*/
+/*
 app.get('/',(req,res)=>{
     Usuario.find({}).exec((err,usuarios)=>{
         if (err) {
@@ -77,7 +78,7 @@ app.get('/',(req,res)=>{
             usuario: usuarioDB
         })
     })
-})
+})*/
 
 // el llamado de las interfaces (archivos hbs que son los html) desde el objeto app
 app.get('/', (req, res) => {
