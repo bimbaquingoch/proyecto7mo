@@ -6,9 +6,14 @@ const _ = require('underscore')
 //importacion del esquema de usuario
 const Usuario = require('../models/usuario')
 
+const bodyParser = require('body-parser')
+
 // app es el objeto con el que manejamos express
 // osea es el constructor del módulo
 const app = express()
+
+app.use(bodyParser.urlencoded({ extended: false }))
+
 
 app.post('/register', (req, res) => {
 
