@@ -1,9 +1,9 @@
 const express = require('express')
-//para encriptar la contraseña
+    //para encriptar la contraseña
 const bcrypt = require('bcrypt')
-//
+    //
 const _ = require('underscore')
-//importacion del esquema de usuario
+    //importacion del esquema de usuario
 const Usuario = require('../models/usuario')
 
 const bodyParser = require('body-parser')
@@ -14,7 +14,6 @@ const app = express()
 
 app.use(bodyParser.urlencoded({ extended: false }))
 
-
 app.post('/register', (req, res) => {
 
     let body = req.body
@@ -22,26 +21,48 @@ app.post('/register', (req, res) => {
         nombre: body.nombre,
         apellido: body.apellido,
         email: body.email,
-        password: bcrypt.hashSync(body.password,10),
+        password: bcrypt.hashSync(body.password, 10),
         role: body.role
     })
 
-    usuario.save((err,usuarioDB)=>{
+    usuario.save((err, usuarioDB) => {
+        const errors = [];
+        const message = [];
+        const { nombre, apellido, email } = req.body
         if (err) {
-            return res.status(400).json({
-                ok:false,
-                err
-            })
+            errors.push({ text: err.message });
+            res.render('register', {
+                errors,
+                nombre,
+                apellido,
+                email
+            });
+
+            /*return res.status(400).json({
+                ok: false,
+                err: err.message
+            })*/
+        } else {
+            message.push({
+                    text: `Usuario ${nombre} registrado con exito`
+                })
+                /*
+                            res.json({
+                                ok: true,
+                                usuario: usuarioDB
+                            })
+                */
+            res.render('login', {
+                message,
+                email
+            });
         }
 
-        res.json({
-            ok: true,
-            usuario:usuarioDB
-        })
 
     })
 
 })
+
 /*
 app.put('/register/:id',(req,res)=>{
 

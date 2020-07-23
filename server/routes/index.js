@@ -3,7 +3,7 @@ const app = express()
 
 //path de las interfaces que se encuentran en el usuario.js
 app.use(require('./usuario'))
-//login
+    //login
 app.use(require('./login'))
 
-module.exports=app
+module.exports = app

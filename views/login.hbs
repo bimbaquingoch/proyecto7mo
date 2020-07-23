@@ -4,8 +4,12 @@
 <div class="wrapper fadeInDown">
   <div id="formContent">
     <!-- Tabs Titles -->
-
+  <div class="container">
+  {{> mensajes }}
+  {{> errors }}
+</div>
     <!-- Icon -->
+    
     <div class="fadeIn first">
         <br>
       <h1>MediSana</a></h1>
@@ -13,9 +17,9 @@
     </div>
 
     <!-- Login Form -->
-    <form>
-      <input type="text" id="login" class="fadeIn second" name="login" placeholder="Usurario">
-      <input type="password"  pattern=".{8,}" id="password" name="password" class="fadeIn second" placeholder="Contraseña">
+    <form action="/login" method="POST">
+      <input type="email" id="login" class="fadeIn second" name="email" placeholder="e-mail" required value="{{email}}">
+      <input type="password"  pattern=".{8,}" id="password" name="password" class="fadeIn second" placeholder="Contraseña" required>
       <input type="submit" class="fadeIn fourth" value="Log In">
     </form>
 
