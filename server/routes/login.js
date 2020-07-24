@@ -53,7 +53,7 @@ app.post('/login', (req, res) => {
         })
 
         //password correcto
-        res.json({
+        res.render('loginpac',{
             ok: true,
             usuario: usuarioDB,
             token
