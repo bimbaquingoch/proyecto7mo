@@ -112,6 +112,16 @@ app.get('/pacientes', (req, res) => {
     res.render('pacientes', { page: 'Pacientes' })
 })
 
+//interfaz paciente
+
+app.get('/loginpac', (req, res) => {
+    res.render('loginpac', { page: 'Login' })
+})
+
+app.get('/datapac', (req, res) => {
+    res.render('datapac', { page: 'Datos' })
+})
+
 // finalización de llamado de las interfaces
 
 //se exporta las interfaces de usuario
