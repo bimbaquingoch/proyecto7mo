@@ -112,6 +112,10 @@ app.get('/pacientes', (req, res) => {
     res.render('pacientes', { page: 'Pacientes' })
 })
 
+app.get('/enfermedad', (req, res) => {
+    res.render('enfermedad', { page: 'Enfermedad' })
+})
+
 //interfaz paciente
 
 app.get('/loginpac', (req, res) => {

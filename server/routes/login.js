@@ -53,11 +53,22 @@ app.post('/login', (req, res) => {
         })
 
         //password correcto
-        res.render('loginpac',{
-            ok: true,
-            usuario: usuarioDB,
-            token
-        })
+        
+        if(usuarioDB.role === 'MEDICO'){
+
+            res.render('logindoc',{
+                ok: true,
+                usuario: usuarioDB,
+                token
+            })
+
+        }else{
+            res.render('loginpac',{
+                ok: true,
+                usuario: usuarioDB,
+                token
+            })
+        }
 
     })
 
