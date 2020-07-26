@@ -6,31 +6,15 @@
     <thead class="thead-light">
         <tr>
         <th scope="col">Nombre</th>
-        <th scope="col">Caso</th>
-        <th scope="col">Historia</th>
         </tr>
-    </thead>
-    <tbody>
-        <tr>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td><a href="enfermedad">Historia</a></td>
+    </thead>    
+        {{#each paciente}}
+        <tr>        
+            <th scope="col">{{this.nombre}}  {{this.apellido}}</th>
         </tr>
-        <tr>
-
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td><a href="enfermedad">Historia</a></td>
-        </tr>
-        <tr>
-
-        <td>Larry</td>
-        <td>the Bird</td>
-        <td><a href="enfermedad">Historia</a></td>
-        </tr>
-    </tbody>
+        {{/each}}
     </table>
 </div>
 
 
-{{> footer }}
+{{> footerdoc }}

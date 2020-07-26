@@ -2,10 +2,18 @@
 # General
 --------------------------------------------------------------*/
 
-body {
+html {
+    height: 100%;
     font-family: "Open Sans", sans-serif;
-    color: #444444;
 }
+
+body {
+    
+    background-color: #56baed;
+    color: #444444;
+    height: 100vh;
+}
+
 
 a {
     color: #3fbbc0;
@@ -121,6 +129,8 @@ Tabla paciente
 -------------------------*/
 
 .tab-pacientes {
+    display: flexbox;
+    justify-content: center;
     padding-left: 5%;
     padding-top: 3%;
     max-width: 95%;
@@ -134,6 +144,22 @@ Google maps
     max-width: 95%;
 }
 
+/*
+Tb enfermedad
+*/
+
+.tbenfermedad{
+    display: flexbox;
+    justify-content: center;
+    text-align: center;
+    padding-left: 10%;
+    padding-top: 3%;
+    max-width: 95%;
+}
+
+.column{
+    margin-left: 5%;      
+}
 
 /*--------------------------------------
 #Login
@@ -141,16 +167,6 @@ Google maps
 
 
 /* BASIC */
-
-html {
-    background-color: #56baed;
-}
-
-body {
-    font-family: "Poppins", sans-serif;
-    height: 100vh;
-}
-
 a {
     color: #92badd;
     display: inline-block;

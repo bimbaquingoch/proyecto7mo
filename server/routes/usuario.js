@@ -12,7 +12,9 @@ const bodyParser = require('body-parser')
 // osea es el constructor del módulo
 const app = express()
 
-app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.urlencoded({ extended: true }))
+
+
 
 app.post('/register', (req, res) => {
 
@@ -37,27 +39,15 @@ app.post('/register', (req, res) => {
                 apellido,
                 email
             });
-
-            /*return res.status(400).json({
-                ok: false,
-                err: err.message
-            })*/
         } else {
             message.push({
-                    text: `Usuario ${nombre} registrado con exito`
-                })
-                /*
-                    res.json({
-                        ok: true,
-                        usuario: usuarioDB
-                    })
-                */
+                text: `Usuario ${nombre} registrado con exito`
+            })
             res.render('login', {
                 message,
                 email
             });
         }
-
     })
 
 })
@@ -109,7 +99,11 @@ app.get('/logindoc', (req, res) => {
 })
 
 app.get('/pacientes', (req, res) => {
-    res.render('pacientes', { page: 'Pacientes' })
+
+    Usuario.find({},(err,paciente)=>{
+        res.render('pacientes', {paciente})
+    })
+
 })
 
 app.get('/enfermedad', (req, res) => {

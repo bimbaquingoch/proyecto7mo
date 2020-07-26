@@ -36,7 +36,7 @@ let usuarioSchema = new Schema({
         type: String,
         default: true
     }
-})
+},{collection:'usuarios'})
 
 usuarioSchema.plugin(uniqueValidator, { message: '{PATH} debe ser único' })
 
