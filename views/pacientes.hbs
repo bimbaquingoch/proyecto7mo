@@ -3,14 +3,27 @@
 
 <div class="tab-pacientes">
     <table class="table">
-    <thead class="thead-light">
-        <tr>
-        <th scope="col">Nombre</th>
-        </tr>
-    </thead>    
+        <thead class="thead-light">
+            <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Estado</th>
+                <th scope="col">Diagnostico</th>
+                <th scope="col">Opciones</th>
+            </tr>
+        </thead>
         {{#each paciente}}
-        <tr>        
-            <th scope="col">{{this.nombre}}  {{this.apellido}}</th>
+        <tr>
+            <th scope="col">{{this.nombre}} {{this.apellido}}</th>
+            {{#if this.estado.Istrue}}
+            <th scope="col">En tratamiento</th>
+            {{else}}
+            <th scope="col">Tratamiento superado</th>
+            {{/if}}
+            <th scope="col">{{this.estado}}</th>
+            <th>
+                <a href="form_pred" class="btn btn-warning" title="Dar de alta">&#10004;</a>
+                <a href="form_pred" class="btn btn-success">Diagnosticar</a>
+            </th>
         </tr>
         {{/each}}
     </table>

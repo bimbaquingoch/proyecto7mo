@@ -104,8 +104,8 @@ app.get('/logindoc', (req, res) => {
 
 app.get('/pacientes', (req, res) => {
 
-    Usuario.find({},(err,paciente)=>{
-        res.render('pacientes', {paciente})
+    Usuario.find({ "role": "PACIENTE" }, (err, paciente) => {
+        res.render('pacientes', { paciente })
     })
 
 })

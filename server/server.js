@@ -30,13 +30,14 @@ app.set('view engine', 'hbs')
 
 
 //configuración global de las rutas
-app.use(require('./routes/index'))
+app.use(require('./routes/index'));
 
 //Incluir las rutas de usuario
 app.use(require('./routes/usuario'));
 
 //conexion BDD
-mongoose.connect('mongodb://localhost:27017/proyecto', {
+urlDB = "mongodb+srv://user_db:1a2b3c4d5s@proyectointegrador.ctgyz.mongodb.net/proyectoIntegrador?retryWrites=true&w=majority"
+mongoose.connect(urlDB, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
