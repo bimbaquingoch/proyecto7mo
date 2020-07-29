@@ -147,6 +147,10 @@ app.get('/login', (req, res) => {
     res.render('login', { page: 'Login' })
 })
 
+app.get('/form_pred', (req, res) => {
+    res.render('form_pred', { page: 'form_pred' })
+})
+
 //interfaz doctor
 app.get('/logindoc', (req, res) => {
     res.render('logindoc', { page: 'logindoc' })

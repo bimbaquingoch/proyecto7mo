@@ -1,0 +1,92 @@
+{{> header }}
+{{> navbar }}
+
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+        <!-- Tabs Titles -->
+        <div class="container">
+            {{> errors }}
+        </div>
+        <div class="fadeIn first">
+            <br>
+            <h2>Registro de enfermedades</a>
+            </h2>
+            <br>
+        </div>
+        <form action="https://app-prediccion.herokuapp.com/" method="POST">
+            <fieldset>
+                <legend>Enfermedades neuronales</legend>
+                <div class="form-group">
+                    <label class="form-check-label">
+                        <input type="checkbox" name="sin_D">Sindrome de down
+                    </label>
+                    <label class="form-check-label">
+                        <input type="checkbox" name="par_C"> Paralisis cerebral
+                    </label>
+                    <label class="form-check-label">
+                        <input type="checkbox" name="park">Parkinson
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label class="form-check-label">
+                        <input type="checkbox" name="hemiplejia">Hemiplejia
+                    </label>
+                    <label class="form-check-label">
+                        <input type="checkbox" name="hemiparesia">Hemiparesia
+                    </label>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Enfermedades respiratorias</legend>
+                <div class="form-group">
+                    <label class="form-check-label">
+                        <input type="checkbox" name="asma"> Asma
+                    </label>
+                    <label class="form-check-label">
+                        <input type="checkbox" name="epoc">Epoc
+                    </label>
+                    <label class="form-check-label">
+                        <input type="checkbox" name="tuber">Tuberculosis
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label class="form-check-label">
+                        <input type="checkbox" name="fib_Quis">Fibrosis quistica
+                    </label>
+                    <label class="form-check-label">
+                        <input type="checkbox" name="bron_cron">Bronquitis cronica
+                    </label>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Enfermedades Físicas</legend>
+                <div class="form-group">
+                    <label class="form-check-label">
+                        <input type="checkbox" name="luxaciones"> Luxaciones
+                    </label>
+                    <label class="form-check-label">
+                        <input type="checkbox" name="tendinitis"> Tendinitis
+                    </label>
+                    <label class="form-check-label">
+                        <input type="checkbox" name="esguinces">Esguinces
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label class="form-check-label">
+                        <input type="checkbox" name="desgarros">Desgarros
+                    </label>
+                    <label class="form-check-label">
+                        <input type="checkbox" name="fracturas">Fracturas
+                    </label>
+                </div>
+            </fieldset>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Consultar</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+{{> footer }}

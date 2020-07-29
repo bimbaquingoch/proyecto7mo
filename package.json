@@ -30,5 +30,6 @@
   "bugs": {
     "url": "https://github.com/bimbaquingoch/proyecto7mo/issues"
   },
-  "homepage": "https://github.com/bimbaquingoch/proyecto7mo#readme"
+  "homepage": "https://github.com/bimbaquingoch/proyecto7mo#readme",
+  "devDependencies": {}
 }
