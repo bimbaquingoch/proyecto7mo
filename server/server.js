@@ -1,6 +1,6 @@
 //llama al archivo de configuración
 require('./config/config')
-    //express y bodyprser son middlewords osea, una capa intermedia entre 2 interfaces
+    //express y bodyparser son middlewords osea, una capa intermedia entre 2 interfaces
     //de software, realiza la getion del html a trevés del servidor web
 const express = require('express')
 const bodyParser = require('body-parser')
@@ -12,7 +12,7 @@ const path = require('path')
 const app = express()
 
 // parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.urlencoded({ extended: true }))
 
 // parse application/json
 app.use(bodyParser.json())

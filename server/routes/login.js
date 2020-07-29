@@ -23,14 +23,6 @@ app.post('/login', (req, res) => {
             return res.render('login', {
                 errors
             });
-            /*
-                return res.status(400).json({
-                ok: false,
-                err: {
-                    message: 'Usuario o contaseña incorrectos'
-                }
-            })
-             */
         }
         //verifica si las los passwords coinciden
         if (!bcrypt.compareSync(body.password, usuarioDB.password)) {
@@ -38,14 +30,6 @@ app.post('/login', (req, res) => {
             return res.render('login', {
                 errors
             });
-            /*
-            return res.status(400).json({
-                ok: false,
-                err: {
-                    message: 'Usuario o contaseña incorrectos'
-                }
-        })
-        */
         }
 
         let token = jwt.sign({ usuario: usuarioDB }, process.env.SEED_AUTENTICACION, {
@@ -53,11 +37,22 @@ app.post('/login', (req, res) => {
         })
 
         //password correcto
-        res.json({
-            ok: true,
-            usuario: usuarioDB,
-            token
-        })
+        
+        if(usuarioDB.role === 'MEDICO'){
+
+            res.render('logindoc',{
+                ok: true,
+                usuario: usuarioDB,
+                token
+            })
+
+        }else{
+            res.render('loginpac',{
+                ok: true,
+                usuario: usuarioDB,
+                token
+            })
+        }
 
     })
 
