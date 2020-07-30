@@ -6,7 +6,6 @@
         <thead class="thead-light">
             <tr>
                 <th scope="col">Nombre</th>
-                <th scope="col">Estado</th>
                 <th scope="col">Diagnostico</th>
                 <th scope="col">Opciones</th>
             </tr>
@@ -14,15 +13,10 @@
         {{#each paciente}}
         <tr>
             <th scope="col">{{this.nombre}} {{this.apellido}}</th>
-            {{#if this.estado.Istrue}}
-            <th scope="col">En tratamiento</th>
-            {{else}}
-            <th scope="col">Tratamiento superado</th>
-            {{/if}}
-            <th scope="col">{{this.estado}}</th>
+            <th scope="col">{{this.tratamiento}}</th>
             <th>
-                <a href="form_pred" class="btn btn-warning" title="Dar de alta">&#10004;</a>
-                <a href="form_pred" class="btn btn-success">Diagnosticar</a>
+                <!---<a href="form_pred" class="btn btn-warning" title="Dar de alta">&#10004;</a>--->
+                <a href="enfermedad?id={{this._id}}" class="btn btn-success">Diagnosticar</a>
             </th>
         </tr>
         {{/each}}

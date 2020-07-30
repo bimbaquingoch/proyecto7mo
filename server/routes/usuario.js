@@ -107,11 +107,35 @@ app.get('/pacientes', (req, res) => {
     Usuario.find({ "role": "PACIENTE" }, (err, paciente) => {
         res.render('pacientes', { paciente })
     })
-
 })
 
 app.get('/enfermedad', (req, res) => {
-    res.render('enfermedad', { page: 'Enfermedad' })
+    var id = req.query.id;
+    res.render('enfermedad', { id })
+})
+
+app.get('/resultado', (req, res) => {
+    var y_pred = { tratamiento: req.query.y_pred };
+    var id = req.query.id;
+    Usuario.findByIdAndUpdate(id, y_pred, { new: true, runValidators: true, context: 'query' }, (err, usuarioDB) => {
+        if (err) {
+            return res.status(400).json({
+                ok: false,
+                err
+            });
+        }
+    })
+    Usuario.find({ "_id": id }, (err, paciente) => {
+        if (err) {
+            return res.status(400).json({
+                ok: false,
+                err
+            });
+        }
+        user = paciente[0].nombre + " " + paciente[0].apellido
+        res.render('resultado', { y_pred, user, page: 'resultado' })
+    })
+
 })
 
 //interfaz paciente

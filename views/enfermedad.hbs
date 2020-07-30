@@ -1,168 +1,167 @@
 {{> header }}
 {{> navlogdoc }}
-<div class="tbenfermedad">
-    
-    <div class="row">
-
-        <div class="column">
-
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <div class="input-group-text">
-                        <input type="checkbox" aria-label="Checkbox for following text input">
+<form action="https://app-prediccion.herokuapp.com/" method="POST">
+    <div class="tbenfermedad">
+        <input type="hidden" name="id" value="{{id}}" readonly="readonly" style="background: transparent;;">
+        <div class="row">
+            <div class="column">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            <input type="checkbox" name="sin_D" aria-label="Checkbox for following text input">
+                        </div>
                     </div>
+                    <label type="text" class="form-control">Sindrome de down
                 </div>
-                <label type="text" class="form-control">Sindrome de down
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            <input type="checkbox" name="par_C" aria-label="Checkbox for following text input">
+                        </div>
+                    </div>
+                    <label type="text" class="form-control">Paralisis cerebral
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            <input type="checkbox" name="park" aria-label="Checkbox for following text input">
+                        </div>
+                    </div>
+                    <label type="text" class="form-control">Parkinson
+                </div>
+                <!-- aqui termina el collumn-->
             </div>
 
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <div class="input-group-text">
-                        <input type="checkbox" aria-label="Checkbox for following text input">
+
+            <div class="column">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            <input type="checkbox" name="hemiplejia" aria-label="Checkbox for following text input">
+                        </div>
                     </div>
+                    <label type="text" class="form-control">Hemiplejia
                 </div>
-                <label type="text" class="form-control">Paralisis cerebral
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            <input type="checkbox" name="hemiparesia" aria-label="Checkbox for following text input">
+                        </div>
+                    </div>
+                    <label type="text" class="form-control">Hemiparesia
+                </div>
+
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            <input type="checkbox" name="asma" aria-label="Checkbox for following text input">
+                        </div>
+                    </div>
+                    <label type="text" class="form-control">Asma
+                </div>
+                <!-- aqui termina el collumn-->
             </div>
 
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <div class="input-group-text">
-                        <input type="checkbox" aria-label="Checkbox for following text input">
+            <div class="column">
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            <input type="checkbox" name="epoc" aria-label="Checkbox for following text input">
+                        </div>
                     </div>
+                    <label type="text" class="form-control">Epoc
                 </div>
-                <label type="text" class="form-control">Parkinson
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            <input type="checkbox" name="tuber" aria-label="Checkbox for following text input">
+                        </div>
+                    </div>
+                    <label type="text" class="form-control">Tuberculosis
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            <input type="checkbox" name="fib_Quis" aria-label="Checkbox for following text input">
+                        </div>
+                    </div>
+                    <label type="text" class="form-control">Fibrosis quistica
+                </div>
+                <!-- aqui termina el collumn-->
             </div>
-            <!-- aqui termina el collumn-->
+
+            <div class="column">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            <input type="checkbox" name="bron_cron" aria-label="Checkbox for following text input">
+                        </div>
+                    </div>
+                    <label type="text" class="form-control">Bronquitis cronica
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            <input type="checkbox" name="luxaciones" aria-label="Checkbox for following text input">
+                        </div>
+                    </div>
+                    <label type="text" class="form-control">Luxaciones
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            <input type="checkbox" name="tendinitis" aria-label="Checkbox for following text input">
+                        </div>
+                    </div>
+                    <label type="text" class="form-control">Tendinitis
+                </div>
+                <!--aquí se cierra el column  -->
+            </div>
+
+            <div class="column">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            <input type="checkbox" name="esguinces" aria-label="Checkbox for following text input">
+                        </div>
+                    </div>
+                    <label type="text" class="form-control">Esguinces
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            <input type="checkbox" name="desgarros" aria-label="Checkbox for following text input">
+                        </div>
+                    </div>
+                    <label type="text" class="form-control">Desgarros
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            <input type="checkbox" name="fracturas" aria-label="Checkbox for following text input">
+                        </div>
+                    </div>
+                    <label type="text" class="form-control">Fracturas
+                </div>
+
+            </div>
+            <!--aquí se cierra el row  -->
         </div>
-
-
-        <div class="column">
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <div class="input-group-text">
-                        <input type="checkbox" aria-label="Checkbox for following text input">
-                    </div>
-                </div>
-                <label type="text" class="form-control">Hemiplejia
-            </div>
-            
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <div class="input-group-text">
-                        <input type="checkbox" aria-label="Checkbox for following text input">
-                    </div>
-                </div>
-                <label type="text" class="form-control">Hemiparesia
-            </div>
-
-
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <div class="input-group-text">
-                        <input type="checkbox" aria-label="Checkbox for following text input">
-                    </div>
-                </div>
-                <label type="text" class="form-control">Asma
-            </div>
-            <!-- aqui termina el collumn-->
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Consultar</button>
         </div>
-
-        <div class="column">
-
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <div class="input-group-text">
-                        <input type="checkbox" aria-label="Checkbox for following text input">
-                    </div>
-                </div>
-                <label type="text" class="form-control">Epoc
-            </div>
-
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <div class="input-group-text">
-                        <input type="checkbox" aria-label="Checkbox for following text input">
-                    </div>
-                </div>
-                <label type="text" class="form-control">Tuberculosis
-            </div>
-
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <div class="input-group-text">
-                        <input type="checkbox" aria-label="Checkbox for following text input">
-                    </div>
-                </div>
-                <label type="text" class="form-control">Fibrosis quistica
-            </div>
-            <!-- aqui termina el collumn-->
-        </div>
-
-        <div class="column">
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <div class="input-group-text">
-                        <input type="checkbox" aria-label="Checkbox for following text input">
-                    </div>
-                </div>
-                <label type="text" class="form-control">Bronquitis cronica
-            </div>
-
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <div class="input-group-text">
-                        <input type="checkbox" aria-label="Checkbox for following text input">
-                    </div>
-                </div>
-                <label type="text" class="form-control">Luxaciones
-            </div>
-
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <div class="input-group-text">
-                        <input type="checkbox" aria-label="Checkbox for following text input">
-                    </div>
-                </div>
-                <label type="text" class="form-control">Tendinitis
-            </div>
-            <!--aquí se cierra el column  -->
-        </div>
-
-        <div class="column">
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <div class="input-group-text">
-                        <input type="checkbox" aria-label="Checkbox for following text input">
-                    </div>
-                </div>
-                <label type="text" class="form-control">Esguinces
-            </div>
-
-             <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <div class="input-group-text">
-                        <input type="checkbox" aria-label="Checkbox for following text input">
-                    </div>
-                </div>
-                <label type="text" class="form-control">Desgarros
-            </div>
-
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <div class="input-group-text">
-                        <input type="checkbox" aria-label="Checkbox for following text input">
-                    </div>
-                </div>
-                <label type="text" class="form-control">Fracturas
-            </div>
-
-        </div>
-        <!--aquí se cierra el row  -->
     </div>
 
-    <input type="submit" value="Submit">
-    
-    
-</div>
-
+</form>
 {{> footer }}
