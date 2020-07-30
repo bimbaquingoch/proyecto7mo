@@ -5,6 +5,7 @@ const bcrypt = require('bcrypt')
 const _ = require('underscore')
     //importacion del esquema de usuario
 const Usuario = require('../models/usuario')
+const Terapias = require('../models/terapias')
 
 const bodyParser = require('body-parser')
 
@@ -110,6 +111,32 @@ app.get('/pacientes', (req, res) => {
 })
 
 app.get('/enfermedad', (req, res) => {
+    let body = req.body
+    let terapia = new Terapias({
+            sindrome_down: body.sin_D,
+            paralisis_cerebral: body.par_C,
+            parkinson: body.park,
+            hemiplejia: body.hemiplejia,
+            hemiparesia: body.hemiparesia,
+            asma: body.asma,
+            epoc: body.epoc,
+            tuberculosis: body.tuber,
+            fibrosis_quistica: body.fib_Quis,
+            bronquitis_cronica: body.bron_cron,
+            luxaciones: body.luxaciones,
+            tendinitis: body.tendinitis,
+            esguinces: body.esguinces,
+            desgarros: body.desgarros,
+            fracturas: body.fracturas
+        })
+        /*
+        console.log(terapia);
+        terapia.save((err, usuarioDB) => {
+            if (err) {
+                console.log(err);
+            }
+        })
+        */
     var id = req.query.id;
     res.render('enfermedad', { id })
 })
