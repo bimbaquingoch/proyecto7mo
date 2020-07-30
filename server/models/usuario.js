@@ -35,8 +35,12 @@ let usuarioSchema = new Schema({
     estado: {
         type: String,
         default: true
+    },
+    tratamiento: {
+        type: String,
+        default: "Sin tratamiento"
     }
-},{collection:'usuarios'})
+}, { collection: 'usuarios' })
 
 usuarioSchema.plugin(uniqueValidator, { message: '{PATH} debe ser único' })
 
