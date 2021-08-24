@@ -1,26 +1,38 @@
-# proyecto7mo
-Proyecto integrador septimo
+<h1 align="center">Proyecto integrador septimo 👋</h1>
 
-Pasos para correr de manera local
+<p>
+<img src='./public/assets/medisana.png'>
+  <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
+  <a href="#" target="_blank">
+    <img alt="License: ISC" src="https://img.shields.io/badge/License-ISC-yellow.svg" />
+  </a>
+</p>
 
-Realizar un git clone ...
+## Install
 
-Luego  en la carpeta donde se encuentra el proyecto realizar esto
-
-1.- Verificar si se tiene instalado Nodejs version 12 LTS
-
-2.- Desde el terminal en la carpeta donde se encuentre el proyecto o en el editor de código introducir el comando
-
-npm init 
-
-seguido del comando 
-
+```sh
 npm install
+```
 
-3.- Correr el servidor: introducir el comando
+## Usage
 
-node server\server.js
+```sh
+npm run start
+```
 
-una vez esté corriendo el servidor ir a
+## Development
 
+```sh
+npm run dev
+```
+
+## Authors
+
+- 👤 **Bryan Imbaquingo**
+- 👤 **Kevin Changoluisa**
+
+### Open you browser and then write
+
+```
 localhost:3000
+```
